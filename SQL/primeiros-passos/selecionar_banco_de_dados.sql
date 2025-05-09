@@ -1,0 +1,2 @@
+--especificar database
+USE starwars;
