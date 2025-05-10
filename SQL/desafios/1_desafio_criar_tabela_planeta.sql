@@ -13,3 +13,4 @@ CREATE TABLE IF NOT exists planeta (
     qtde_luas int,
     habitado boolean
 );
+show TABLEs; 

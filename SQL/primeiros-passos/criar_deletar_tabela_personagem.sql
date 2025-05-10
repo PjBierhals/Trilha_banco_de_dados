@@ -5,7 +5,7 @@ CREATE TABLE personagem (
     id int,
     nome VARCHAR(120),
     altura DECIMAL(4,2),
-    desctaque BOOLEAN,
+    destaque BOOLEAN,
     nascimento date
 )
 
@@ -14,7 +14,7 @@ CREATE TABLE if not exists personagem (
     id int,
     nome VARCHAR(120),
     altura DECIMAL(4,2),
-    desctaque BOOLEAN,
+    destaque BOOLEAN,
     nascimento date
 )
 
