@@ -3,7 +3,7 @@ INSERT INTO starwars.personagem (id, nome, altura, destaque, nascimento ) VALUES
 
 
 INSERT INTO starwars.personagem(id, nome, destaque) VALUES
-(2,"Chebacca",true)
+(2,"Chewbacca",true)
 
 INSERT INTO starwars.personagem(nome, altura, nascimento, id, destaque) VALUES
 ('Dart Vader', 2.02,'309-09-08',3,true);
