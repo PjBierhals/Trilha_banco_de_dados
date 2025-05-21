@@ -1,4 +1,4 @@
-USE relacionamentos;
+USE visualizacoes;
 
 CREATE TABLE IF NOT EXISTS aluno(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -36,3 +36,23 @@ SELECT *FROM aluno;
 
 SELECT* FROM disciplina;
 SELECT* FROM matricula;
+
+CREATE VIEW v_matricula AS
+    SELECT 
+        aluno.id as id_aluno,
+        aluno.nome as nome_aluno,
+        disciplina.id as id_disciplina,
+        disciplina.nome as nome_disciplina
+    FROM aluno
+    JOIN matricula ON matricula.id_aluno = aluno.id
+    JOIN disciplina ON matricula.id_disciplina = disciplina.id;
+
+
+SELECT * FROM v_matricula;
+
+SELECT count(*), nome_disciplina 
+FROM v_matricula 
+GROUP BY nome_disciplina;
+SELECT count(*), nome_aluno 
+FROM v_matricula 
+GROUP BY nome_aluno;

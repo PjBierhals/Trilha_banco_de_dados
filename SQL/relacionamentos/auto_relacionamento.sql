@@ -1,38 +1,21 @@
 USE relacionamentos;
 
-CREATE TABLE IF NOT EXISTS aluno(
+CREATE TABLE IF NOT EXISTS empregado(
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100)not NULL
+    nome VARCHAR(100)NOT NULL,
+    cargo VARCHAR(50)NOT NULL,
+    id_supervisor int,
+    FOREIGN KEY (id_supervisor) REFERENCES empregado(id)
 );
 
 
-CREATE TABLE IF NOT EXISTS disciplina(
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL  
-);
-CREATE TABLE IF NOT EXISTS matricula(
-    id_aluno INT NOT NULL,
-    id_disciplina INT NOT NULL,
-    quantidade_credito INT DEFAULT 4,
-    PRIMARY KEY (id_aluno, id_disciplina),
-    FOREIGN KEY (id_aluno) REFERENCES aluno(id),
-    FOREIGN KEY (id_disciplina) REFERENCES disciplina(id)
-);
+
+INSERT INTO empregado (nome,cargo,id_supervisor) VALUES
+('Patricia','Gerente de projeto',NULL),
+('Gisele','Desenvolvedora', 1),
+('Mariana','Analista de qualidade',1);
+INSERT INTO empregado (nome,cargo,id_supervisor) VALUES
+('Carlos','Engenheiro de Software',9);
 
 
-INSERT INTO Aluno (nome) VALUES
-('Ana Silva'),('Maria Oliveira'),('Carlos Santos');
-
-INSERT INTO disciplina(nome) VALUES
-('Matematica'),
-('História'),
-('Inglês');
-INSERT INTO matricula(id_aluno, id_disciplina) VALUES
-(1,1),
-(1, 2),
-(2, 1),
-(3,3);
-SELECT *FROM aluno;
-
-SELECT* FROM disciplina;
-SELECT* FROM matricula;
+SELECT* FROM empregado;
