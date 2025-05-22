@@ -1,1 +1,1 @@
-CREATE DATABASE relacionamentos;
+CREATE DATABASE IF NOT EXISTS relacionamentos;
